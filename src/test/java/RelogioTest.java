@@ -34,4 +34,20 @@ public class RelogioTest {
         relogio.setSegundo(45);
         assertEquals("01:30:45 PM", relogio.obterHoraFormatoAMPM());
     }
+    
+    @Test
+    public void testMarcaIntervaloTempo() {
+        Relogio relogio = new Relogio();
+        
+        relogio.setHora(10);
+        relogio.setMinuto(15);
+        relogio.setSegundo(30);
+        
+        relogio.iniciarMarcacao();
+        
+        // Avança o tempo para simular um intervalo de 2 horas, 30 minutos e 15 segundos
+        relogio.avancarTempo(2, 30, 15);
+        
+        assertEquals("02:30:15", relogio.obterTempoDecorrido());
+    }
 }
