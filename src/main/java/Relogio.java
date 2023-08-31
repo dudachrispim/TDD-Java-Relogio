@@ -14,4 +14,10 @@ public class Relogio {
     public String obterHora() {
         return String.format("%02d:%02d:%02d", hora, minuto, segundo);
     }
+    
+    public void reiniciarParaMeiaNoite() {
+        this.hora = 0;
+        this.minuto = 0;
+        this.segundo = 0;
+    }
 }
